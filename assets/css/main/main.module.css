@@ -1,0 +1,133 @@
+.iconSize {
+  width: 50px !important;
+}
+
+.navbar__text {
+  color: #434343 !important;
+}
+
+.navbar__text:hover {
+  color: #fe7900 !important;
+  cursor: pointer !important;
+}
+
+.footer__custom {
+  background-image: url("../../img/theme/footer.png") !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.background__home {
+  background-image: url("../../img/theme/aaa.png") !important;
+  background-size: cover;
+  background-position: center;
+  max-width: 100%;
+  width: 100%;
+}
+
+.background__image {
+  background-image: url("../../img/theme/foto landing page.png") !important;
+  background-size: cover;
+  background-position: center;
+  max-width: 100%;
+  width: 100%;
+}
+
+.background__card__events {
+  background-image: url("../../img/brand/Instagram_post_-_27.png");
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  width: 100%;
+}
+
+.gradient__card__events {
+  background: linear-gradient(
+    180deg,
+    rgba(214, 231, 255, 0) 0%,
+    #000000 116.25%
+  );
+  height: 100%;
+  align-items: end;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.carousel-box {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bg-carousel {
+  background-image: url("../../img/theme/Frame 701.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.slick-dots {
+  bottom: 5px !important;
+}
+
+.background-3 {
+  background-image: url("../../img/theme/Frame 700.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
+.background_card2 {
+  background-image: url("../../img/theme/foto tagline.png");
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+}
+
+.background_food {
+  background-image: url("../../img/theme/foof and drink.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.background_event_promotion {
+  background-image: url("../../img/theme/foto landing page.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.background_film {
+  background-image: url("../../img/icons/common/image 6.svg");
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  width: 100%;
+}
+
+.search {
+  width: 20%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 1px 3px rgba(50, 50, 93, 0.15),
+    0px 1px 0px rgba(0, 0, 0, 0.02);
+  padding: 10px 35px;
+  border: 0px solid #8e8e8e;
+  border-radius: 23px;
+  background-image: url(../../img/icons/common/Search.svg);
+  background-repeat: no-repeat;
+  background-position-x: 6%;
+  background-position-y: center;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.background_detail {
+  background-image: url("../../img/theme/Rectangle (1).svg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
