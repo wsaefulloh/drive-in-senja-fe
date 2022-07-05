@@ -2,4 +2,7 @@ require("dotenv").config(); // require dotenv
 const cli = require("next/dist/cli/next-dev");
 
 //untuk menjalankan next js pada host dan port sesuai .env
-cli.nextDev(["-p", process.env.PORT], ["-H", process.env.HOST]);
+cli.nextDev(
+  ["-p", process.env.PORT || 3000],
+  ["-H", process.env.HOST || localhost]
+);
