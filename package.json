@@ -16,6 +16,7 @@
     "@fullcalendar/core": "5.5.1",
     "@fullcalendar/daygrid": "5.5.0",
     "@fullcalendar/interaction": "5.5.0",
+    "@types/react-bootstrap-table-next": "^4.0.18",
     "@zeit/next-css": "1.0.1",
     "@zeit/next-sass": "1.0.1",
     "bootstrap": "4.6.0",

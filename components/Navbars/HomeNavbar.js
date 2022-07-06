@@ -42,7 +42,7 @@ function AdminNavbar() {
         id="navbar-main"
       >
         <Container>
-          <Link href="/">
+          <Link href="#">
             <span>
               <NavbarBrand href="#pablo">
                 <img
@@ -72,7 +72,7 @@ function AdminNavbar() {
             <div className="navbar-collapse-header">
               <Row>
                 <Col className="collapse-brand" xs="6">
-                  <Link href="/admin/dashboard">
+                  <Link href="#">
                     <img
                       alt="..."
                       src={require("assets/img/brand/DIS_Logo_1 1.png")}
@@ -98,7 +98,7 @@ function AdminNavbar() {
             </div>
             <Nav navbar>
               <NavItem className="m-0">
-                <Link href="/admin/dashboard">
+                <Link href="#">
                   <NavLink href="#pablo" className="py-1">
                     <span className="nav-link-inner--text navbar__text">
                       Home
@@ -107,7 +107,7 @@ function AdminNavbar() {
                 </Link>
               </NavItem>
               <NavItem className="m-0">
-                <Link href="/auth/pricing">
+                <Link href="#">
                   <NavLink href="#pablo" className="py-1">
                     <span className="nav-link-inner--text navbar__text">
                       Now Playing
@@ -116,7 +116,7 @@ function AdminNavbar() {
                 </Link>
               </NavItem>
               <NavItem className="m-0">
-                <Link href="/auth/login">
+                <Link href="#">
                   <NavLink href="#pablo" className="py-1">
                     <span className="nav-link-inner--text navbar__text">
                       Promotion
@@ -125,7 +125,7 @@ function AdminNavbar() {
                 </Link>
               </NavItem>
               <NavItem className="m-0">
-                <Link href="/auth/register">
+                <Link href="#">
                   <NavLink href="#pablo" className="py-1">
                     <span className="nav-link-inner--text navbar__text">
                       Booking & Partnership
@@ -134,7 +134,7 @@ function AdminNavbar() {
                 </Link>
               </NavItem>
               <NavItem className="m-0">
-                <Link href="/auth/lock">
+                <Link href="#">
                   <NavLink href="#pablo" className="py-1">
                     <span className="nav-link-inner--text navbar__text">
                       Food & Drink
@@ -143,7 +143,7 @@ function AdminNavbar() {
                 </Link>
               </NavItem>
               <NavItem className="m-0">
-                <Link href="/auth/register">
+                <Link href="#">
                   <NavLink href="#pablo" className="py-1">
                     <span className="nav-link-inner--text navbar__text">
                       Film Festival
@@ -152,7 +152,7 @@ function AdminNavbar() {
                 </Link>
               </NavItem>
               <NavItem className="m-0">
-                <Link href="/auth/register">
+                <Link href="#">
                   <NavLink href="#pablo" className="py-1">
                     <span className="nav-link-inner--text navbar__text">
                       Location
