@@ -1,19 +1,19 @@
 import React from "react";
 import { withRouter } from "next/router";
 // core components
-import AdminNavbar from "components/Navbars/HomeNavbar.js";
-import AdminFooter from "components/Footers/HomeFooter.js";
+import HomeNavbar from "components/Navbars/HomeNavbar.js";
+import HomeFooter from "components/Footers/HomeFooter.js";
 
-function Admin({ children }) {
+function HomeLayout({ children }) {
   return (
     <>
       <div className="main-content">
-        <AdminNavbar />
+        <HomeNavbar />
         {children}
-        <AdminFooter />
+        <HomeFooter />
       </div>
     </>
   );
 }
 
-export default withRouter(Admin);
+export default withRouter(HomeLayout);

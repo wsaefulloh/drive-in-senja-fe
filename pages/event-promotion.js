@@ -1,58 +1,14 @@
-/*!
-
-=========================================================
-* NextJS Argon Dashboard PRO - v1.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/nextjs-argon-dashboard-pro
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
-// nodejs library that concatenates classes
-import classnames from "classnames";
-// react plugin for creating notifications over the dashboard
-import NotificationAlert from "react-notification-alert";
-// react component used to create sweet alerts
-import ReactBSAlert from "react-bootstrap-sweetalert";
+
 // reactstrap components
-import {
-  UncontrolledAlert,
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardText,
-  CardTitle,
-  FormGroup,
-  Form,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Modal,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Button, Container, Row } from "reactstrap";
+
 // layout for this page
-import Admin from "layouts/Homepage.js";
-// core components
-import CardEvent from "components/Cards/CardsEvent.js";
-
-import CardFilms from "components/Cards/CardsFilm.js";
-
-import Slider from "react-slick";
+import HomeLayout from "layouts/Homepage.js";
 
 import "../assets/css/main/main.module.css";
 
-function Home() {
+function EventsPromotions() {
   return (
     <>
       <Container
@@ -81,6 +37,6 @@ function Home() {
   );
 }
 
-Home.layout = Admin;
+EventsPromotions.layout = HomeLayout;
 
-export default Home;
+export default EventsPromotions;

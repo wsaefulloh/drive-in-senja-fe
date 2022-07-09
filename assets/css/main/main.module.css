@@ -1,3 +1,72 @@
+@font-face {
+  font-family: "PlusJakartaSans";
+  src: url("../../fonts/PlusJakartaDisplay/PlusJakartaSans-Medium.ttf");
+  font-style: medium;
+  font-weight: 400;
+  font-display: swap;
+}
+
+body {
+  font-family: "PlusJakartaSans";
+  font-style: normal;
+  font-size: 12px;
+}
+
+p {
+  line-height: 0;
+  margin: 0 !important;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  margin-bottom: 15px;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.col {
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+}
+
+.row {
+  margin-left: unset;
+  margin-right: unset;
+}
+
+.coverHome_textDIS {
+  width: 90%;
+}
+
+.slider-playnow .slick-list {
+  padding-bottom: 20px !important;
+}
+
+.slider-experience .slick-list {
+  padding-bottom: 10px !important;
+}
+
+.title_cover {
+  background-image: url("../../img/theme/image 6.svg");
+  height: 400px;
+  width: 270px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  margin: auto;
+}
+
 .iconSize {
   width: 50px !important;
 }
@@ -14,7 +83,7 @@
 .footer__custom {
   background-image: url("../../img/theme/footer.png") !important;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
   background-size: cover;
 }
 
@@ -42,6 +111,14 @@
   width: 100%;
 }
 
+.background__card__partner {
+  background-image: url("../../img/theme/Rectangle 187.svg");
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  width: 100%;
+}
+
 .gradient__card__events {
   background: linear-gradient(
     180deg,
@@ -50,6 +127,17 @@
   );
   height: 100%;
   align-items: end;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.gradient__card__partner {
+  background: linear-gradient(
+    180deg,
+    rgba(214, 231, 255, 0) 0%,
+    #000000 116.25%
+  );
+  height: 100%;
   color: #ffffff;
   border-radius: 5px;
 }
@@ -71,6 +159,7 @@
 
 .slick-dots {
   bottom: 5px !important;
+  margin-bottom: 3px !important;
 }
 
 .background-3 {
