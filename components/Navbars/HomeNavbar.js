@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 // reactstrap components
 import {
   UncontrolledCollapse,
@@ -16,6 +17,9 @@ import {
 import "../../assets/css/main/main.module.css";
 
 function HomeNavbar() {
+  const router = useRouter();
+  const url_page = router.asPath;
+
   return (
     <>
       <div className="sticky-top">
@@ -25,9 +29,9 @@ function HomeNavbar() {
           id="navbar-main"
         >
           <Container>
-            <Link href="#">
+            <Link href="/">
               <span>
-                <NavbarBrand href="#pablo">
+                <NavbarBrand href="/">
                   <img
                     alt="..."
                     src={require("assets/img/brand/DIS_Logo_1 1.png")}
@@ -55,7 +59,7 @@ function HomeNavbar() {
               <div className="navbar-collapse-header">
                 <Row>
                   <Col className="collapse-brand" xs="6">
-                    <Link href="#">
+                    <Link href="/">
                       <img
                         alt="..."
                         src={require("assets/img/brand/DIS_Logo_1 1.png")}
@@ -81,26 +85,38 @@ function HomeNavbar() {
               </div>
               <Nav navbar>
                 <NavItem className="m-0">
-                  <Link href="#">
+                  <Link href="/">
                     <NavLink href="#pablo" className="py-1">
-                      <span className="nav-link-inner--text navbar__text">
-                        Home
-                      </span>
+                      {url_page == "/" || url_page.includes("/#") ? (
+                        <span className="nav-link-inner--text navbar__textActive">
+                          Home
+                        </span>
+                      ) : (
+                        <span className="nav-link-inner--text navbar__text">
+                          Home
+                        </span>
+                      )}
                     </NavLink>
                   </Link>
                 </NavItem>
                 <NavItem className="m-0">
-                  <Link href="#">
-                    <NavLink href="#pablo" className="py-1">
-                      <span className="nav-link-inner--text navbar__text">
-                        Now Playing
-                      </span>
+                  <Link href="/list-film">
+                    <NavLink href="/list-film" className="py-1">
+                      {url_page.includes("list-film") ? (
+                        <span className="nav-link-inner--text navbar__textActive">
+                          Now Playing
+                        </span>
+                      ) : (
+                        <span className="nav-link-inner--text navbar__text">
+                          Now Playing
+                        </span>
+                      )}
                     </NavLink>
                   </Link>
                 </NavItem>
                 <NavItem className="m-0">
-                  <Link href="#">
-                    <NavLink href="#pablo" className="py-1">
+                  <Link href="#events">
+                    <NavLink href="#events" className="py-1">
                       <span className="nav-link-inner--text navbar__text">
                         Promotion
                       </span>
@@ -108,17 +124,23 @@ function HomeNavbar() {
                   </Link>
                 </NavItem>
                 <NavItem className="m-0">
-                  <Link href="#">
-                    <NavLink href="#pablo" className="py-1">
-                      <span className="nav-link-inner--text navbar__text">
-                        Booking & Partnership
-                      </span>
+                  <Link href="/booking-partnership">
+                    <NavLink href="/booking-partnership" className="py-1">
+                      {url_page.includes("booking-partnership") ? (
+                        <span className="nav-link-inner--text navbar__textActive">
+                          Booking & Partnership
+                        </span>
+                      ) : (
+                        <span className="nav-link-inner--text navbar__text">
+                          Booking & Partnership
+                        </span>
+                      )}
                     </NavLink>
                   </Link>
                 </NavItem>
                 <NavItem className="m-0">
-                  <Link href="#">
-                    <NavLink href="#pablo" className="py-1">
+                  <Link href="/#food-drink">
+                    <NavLink href="/#food-drink" className="py-1">
                       <span className="nav-link-inner--text navbar__text">
                         Food & Drink
                       </span>
@@ -126,20 +148,32 @@ function HomeNavbar() {
                   </Link>
                 </NavItem>
                 <NavItem className="m-0">
-                  <Link href="#">
-                    <NavLink href="#pablo" className="py-1">
-                      <span className="nav-link-inner--text navbar__text">
-                        Film Festival
-                      </span>
+                  <Link href="/film-festival">
+                    <NavLink href="/film-festival" className="py-1">
+                      {url_page.includes("film-festival") ? (
+                        <span className="nav-link-inner--text navbar__textActive">
+                          Film Festival
+                        </span>
+                      ) : (
+                        <span className="nav-link-inner--text navbar__text">
+                          Film Festival
+                        </span>
+                      )}
                     </NavLink>
                   </Link>
                 </NavItem>
                 <NavItem className="m-0">
-                  <Link href="#">
-                    <NavLink href="#pablo" className="py-1">
-                      <span className="nav-link-inner--text navbar__text">
-                        Location
-                      </span>
+                  <Link href="/location">
+                    <NavLink href="/location" className="py-1">
+                      {url_page.includes("location") ? (
+                        <span className="nav-link-inner--text navbar__textActive">
+                          Location
+                        </span>
+                      ) : (
+                        <span className="nav-link-inner--text navbar__text">
+                          Location
+                        </span>
+                      )}
                     </NavLink>
                   </Link>
                 </NavItem>

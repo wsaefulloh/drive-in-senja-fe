@@ -15,7 +15,7 @@ function PageChange({ path }) {
             style={{ width: "6rem", height: "6rem", borderWidth: ".3rem" }}
           />
         </div>
-        <h4 className="title text-white">Loading page contents for: {path}</h4>
+        <h4 className="title text-white">Loading...</h4>
       </div>
     </div>
   );

@@ -75,6 +75,11 @@ h2 {
   color: #434343 !important;
 }
 
+.navbar__textActive {
+  color: #fe7900 !important;
+  cursor: pointer !important;
+}
+
 .navbar__text:hover {
   color: #fe7900 !important;
   cursor: pointer !important;
@@ -111,6 +116,24 @@ h2 {
   width: 100%;
 }
 
+.background__card__workshop {
+  background-image: url("../../img/brand/Instagram_post_-_27.png");
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  width: 100%;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.background__card__juree {
+  background-image: url("../../img/theme/juree.svg");
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  width: 100%;
+  border-radius: 5px 5px 0px 0px;
+}
+
 .background__card__partner {
   background-image: url("../../img/theme/Rectangle 187.svg");
   background-size: cover;
@@ -126,7 +149,6 @@ h2 {
     #000000 116.25%
   );
   height: 100%;
-  align-items: end;
   color: #ffffff;
   border-radius: 5px;
 }

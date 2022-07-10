@@ -21,7 +21,6 @@ import "assets/vendor/nucleo/css/nucleo.css";
 import "assets/scss/nextjs-argon-dashboard-pro.scss?v1.1.0";
 
 Router.events.on("routeChangeStart", (url) => {
-  console.log(`Loading: ${url}`);
   document.body.classList.add("body-page-transition");
   ReactDOM.render(
     <PageChange path={url} />,

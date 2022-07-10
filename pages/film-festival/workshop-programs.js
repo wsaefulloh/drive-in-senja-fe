@@ -5,15 +5,17 @@ import { Button, Card, Container, Row, Col } from "reactstrap";
 // layout for this page
 import HomeLayout from "layouts/Homepage.js";
 // core components
-import CardEvent from "components/Cards/CardsEvent.js";
+import CardsWorkshop from "components/Cards/CardsWorkshop.js";
+
+import CardsJudges from "components/Cards/CardsJudges.js";
 
 import CardFilms from "components/Cards/CardsFilm.js";
 
 import Slider from "react-slick";
 
-import "../assets/css/main/main.module.css";
+import "../../assets/css/main/main.module.css";
 
-function Home() {
+function WorkshopProgram() {
   var settings = {
     arrows: true,
     dots: true,
@@ -146,31 +148,67 @@ function Home() {
         </Row>
       </Container>
 
-      <Container id="events">
+      <Container>
         <Col>
           <Row className="align-items-center justify-content-between py-4">
             <h2 className="p-0 m-0">Event & Promotions</h2>
-            <Button
-              color="secondary"
-              style={{ color: "#FE7900" }}
-              type="button"
-            >
-              Lainnya ...
-            </Button>
           </Row>
         </Col>
 
-        <Row>
-          <CardEvent />
-          <CardEvent />
-          <CardEvent />
-          <CardEvent />
-          <CardEvent />
-        </Row>
+        <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 box">
+          <CardsWorkshop />
+          <CardsWorkshop />
+          <CardsWorkshop />
+          <CardsWorkshop />
+        </div>
       </Container>
 
-      <Container className="pt-4">
-        <h2 className="text-center">Telah Diliput oleh :</h2>
+      <Container>
+        <Col>
+          <Row className="align-items-center justify-content-between py-4">
+            <h2 className="p-0 m-0">Judges</h2>
+          </Row>
+        </Col>
+
+        <div className="row row-cols-2 row-cols-md-3 row-cols-lg-3 box">
+          <CardsJudges />
+          <CardsJudges />
+          <CardsJudges />
+        </div>
+      </Container>
+
+      <div style={{ backgroundColor: "#FE7900" }} className="p-0 my-4">
+        <Container className="pt-4">
+          <Col>
+            <h2 className="text-center" style={{ color: "#ffffff" }}>
+              Timeline :
+            </h2>
+            <Row className="align-items-center pt-3">
+              <Col>
+                <div className="mb-4" style={{ textAlign: "end" }}>
+                  <img
+                    alt="..."
+                    src={require("assets/img/brand/Loket.svg")}
+                    width="25%"
+                  />
+                </div>
+              </Col>
+              <Col>
+                <div className="mb-4" style={{ textAlign: "start" }}>
+                  <img
+                    alt="..."
+                    src={require("assets/img/brand/Gotix.svg")}
+                    width="25%"
+                  />
+                </div>
+              </Col>
+            </Row>
+          </Col>
+        </Container>
+      </div>
+
+      <Container className="py-4">
+        <h2 className="text-center">Supporting Partners</h2>
         <Slider {...settingAutoPlay} className="pt-3">
           <Col>
             <Row
@@ -246,152 +284,10 @@ function Home() {
           </Col>
         </Slider>
       </Container>
-
-      <Container className="pt-4">
-        <Card className="bg-carousel">
-          <Container className="d-flex align-items-center justify-content-between py-4 px-5">
-            <h2 style={{ color: "#ffffff" }}>Now Playing</h2>
-            <Button
-              color="secondary"
-              style={{ color: "#FE7900" }}
-              type="button"
-            >
-              Lainnya ...
-            </Button>
-          </Container>
-          <Container>
-            <div className="carousel-box">
-              <Slider {...settings} className="slider-playnow">
-                <CardFilms />
-                <CardFilms />
-                <CardFilms />
-                <CardFilms />
-                <CardFilms />
-                <CardFilms />
-              </Slider>
-            </div>
-          </Container>
-        </Card>
-      </Container>
-
-      <Container className="pt-4">
-        <Col>
-          <h2 className="text-center">Dapat dibeli di :</h2>
-          <Row className="align-items-center pt-3">
-            <Col>
-              <div className="mb-4" style={{ textAlign: "end" }}>
-                <img
-                  alt="..."
-                  src={require("assets/img/brand/Loket.svg")}
-                  width="25%"
-                />
-              </div>
-            </Col>
-            <Col>
-              <div className="mb-4" style={{ textAlign: "start" }}>
-                <img
-                  alt="..."
-                  src={require("assets/img/brand/Gotix.svg")}
-                  width="25%"
-                />
-              </div>
-            </Col>
-          </Row>
-        </Col>
-      </Container>
-
-      <Container className="pt-4 mb-4">
-        <Card className="background-3">
-          <Row className="m-0 align-items-center">
-            <Col lg="6">
-              <Container className="pt-4" style={{ maxWidth: "80%" }}>
-                <div className="carousel-box p-0">
-                  <Slider {...settings1} className="slider-experience">
-                    <Col>
-                      <Row className="justify-content-center mb-4 align-items-center">
-                        <img
-                          alt="..."
-                          src={require("assets/img/theme/foto tagline.png")}
-                          width="100%"
-                          style={{ borderRadius: "5px" }}
-                        />
-                      </Row>
-                    </Col>
-                    <Col>
-                      <Row className="justify-content-center mb-4 align-items-center">
-                        <img
-                          alt="..."
-                          src={require("assets/img/theme/foto tagline.png")}
-                          width="100%"
-                          style={{ borderRadius: "5px" }}
-                        />
-                      </Row>
-                    </Col>
-                    <Col>
-                      <Row className="justify-content-center mb-4 align-items-center">
-                        <img
-                          alt="..."
-                          src={require("assets/img/theme/foto tagline.png")}
-                          width="100%"
-                          style={{ borderRadius: "5px" }}
-                        />
-                      </Row>
-                    </Col>
-                  </Slider>
-                </div>
-              </Container>
-            </Col>
-            <Col>
-              <Container className="py-4 px-5">
-                <h1 className="mb-4" style={{ color: "#ffffff" }}>
-                  Drive-In Experience
-                </h1>
-                <div className="mb-4" style={{ color: "#ffffff" }}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget
-                  ut sed a elit mollis diam tortor quis urna. Cursus ac
-                  vulputate ligula faucibus quam in nisl. Sed nam pulvinar risus
-                  pellentesque. Sed ut vulputate sagittis etiam dignissim eu.
-                </div>
-                <Button
-                  color="secondary"
-                  style={{ color: "#FE7900" }}
-                  type="button"
-                >
-                  Buy Ticket
-                </Button>
-              </Container>
-            </Col>
-          </Row>
-        </Card>
-      </Container>
-
-      <Container
-        id="food-drink"
-        className="p-0 m-0 background_food"
-        style={{ maxWidth: "100%" }}
-      >
-        <Row className="justify-content-center align-items-center py-6 m-0">
-          <div className="text-center py-6">
-            <div
-              className="text-center"
-              style={{ color: "#ffffff", fontSize: "100px" }}
-            >
-              FOOD & DRINK
-            </div>
-            <Button
-              color="secondary"
-              style={{ color: "#FE7900", marginTop: "20px" }}
-              type="button"
-            >
-              Order Now
-            </Button>
-          </div>
-        </Row>
-      </Container>
     </>
   );
 }
 
-Home.layout = HomeLayout;
+WorkshopProgram.layout = HomeLayout;
 
-export default Home;
+export default WorkshopProgram;

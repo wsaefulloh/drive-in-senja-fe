@@ -10,7 +10,7 @@ function CardEvents() {
     <>
       <Col>
         <Card className="background__card__events">
-          <CardBody className="gradient__card__events d-flex">
+          <CardBody className="gradient__card__events d-flex align-items-end">
             <div className="w-100">
               <CardTitle className="mb-2" tag="h3" style={{ color: "#ffffff" }}>
                 Card title
