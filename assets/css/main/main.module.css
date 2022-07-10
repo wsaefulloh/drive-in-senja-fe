@@ -53,6 +53,14 @@ h2 {
   padding-bottom: 20px !important;
 }
 
+.slider-playnow .slick-next:before {
+  color: #444444;
+}
+
+.slider-playnow .slick-prev:before {
+  color: #444444;
+}
+
 .slider-experience .slick-list {
   padding-bottom: 10px !important;
 }

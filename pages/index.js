@@ -26,9 +26,9 @@ function Home() {
       {
         breakpoint: 1150,
         settings: {
-          arrows: false,
-          slidesToShow: 4,
-          slidesToScroll: 4,
+          arrows: true,
+          slidesToShow: 2,
+          slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
@@ -36,18 +36,11 @@ function Home() {
       {
         breakpoint: 992,
         settings: {
-          arrows: false,
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          initialSlide: 3,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          arrows: false,
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          arrows: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
         },
       },
     ],
