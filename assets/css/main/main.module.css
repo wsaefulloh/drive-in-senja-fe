@@ -250,3 +250,40 @@ h2 {
   background-position: center;
   width: 100%;
 }
+
+.background_location {
+  background-image: url("../../img/theme/aaa.png");
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.background_maps {
+  background-color: #ffffff;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.border_langkah {
+  border: 4px solid #ffffff;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.langkah_number {
+  background-color: #ffffff;
+  color: #fe7900;
+  border-radius: 20px;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

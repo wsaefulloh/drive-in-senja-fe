@@ -7,6 +7,8 @@ import HomeLayout from "layouts/Homepage.js";
 // core components
 import CardPartnership from "components/Cards/CardsPartnership.js";
 
+import Router from "next/router";
+
 import "../../assets/css/main/main.module.css";
 
 function FilmFestival() {
@@ -96,6 +98,9 @@ function FilmFestival() {
               borderRadius: "10px",
             }}
             type="button"
+            onClick={() => {
+              Router.push("/film-festival/workshop-programs");
+            }}
           >
             Workshop & Program
           </Button>

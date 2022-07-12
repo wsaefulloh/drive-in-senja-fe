@@ -86,7 +86,7 @@ function HomeNavbar() {
               <Nav navbar>
                 <NavItem className="m-0">
                   <Link href="/">
-                    <NavLink href="#pablo" className="py-1">
+                    <NavLink className="py-1">
                       {url_page == "/" || url_page.includes("/#") ? (
                         <span className="nav-link-inner--text navbar__textActive">
                           Home
@@ -115,8 +115,8 @@ function HomeNavbar() {
                   </Link>
                 </NavItem>
                 <NavItem className="m-0">
-                  <Link href="#events">
-                    <NavLink href="#events" className="py-1">
+                  <Link href="/#events">
+                    <NavLink href="/#events" className="py-1">
                       <span className="nav-link-inner--text navbar__text">
                         Promotion
                       </span>

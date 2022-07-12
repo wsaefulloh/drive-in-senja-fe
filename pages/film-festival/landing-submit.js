@@ -1,68 +1,19 @@
 import React from "react";
 
 // reactstrap components
-import { Button, Card, Container, Row, Col } from "reactstrap";
+import { Button, Container, Row, Col } from "reactstrap";
 // layout for this page
 import HomeLayout from "layouts/Homepage.js";
 // core components
-import CardsWorkshop from "components/Cards/CardsWorkshop.js";
+import CardPartnership from "components/Cards/CardsPartnership.js";
 
-import CardsJudges from "components/Cards/CardsJudges.js";
-
-import CardFilms from "components/Cards/CardsFilm.js";
+import Router from "next/router";
 
 import Slider from "react-slick";
 
 import "../../assets/css/main/main.module.css";
 
-function WorkshopProgram() {
-  var settings = {
-    arrows: true,
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    swipeToSlide: true,
-    responsive: [
-      {
-        breakpoint: 1150,
-        settings: {
-          arrows: false,
-          slidesToShow: 4,
-          slidesToScroll: 4,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 992,
-        settings: {
-          arrows: false,
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          initialSlide: 3,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          arrows: false,
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-    ],
-  };
-
-  const settings1 = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-
+function LandingSubmit() {
   const settingAutoPlay = {
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -114,7 +65,6 @@ function WorkshopProgram() {
       },
     ],
   };
-
   return (
     <>
       <Container className="p-0 m-0" style={{ maxWidth: "100%" }}>
@@ -148,61 +98,132 @@ function WorkshopProgram() {
         </Row>
       </Container>
 
-      <Container>
-        <Col>
-          <Row className="align-items-center justify-content-between py-4">
-            <h2 className="p-0 m-0">Workshop & Programs</h2>
-          </Row>
-        </Col>
-
-        <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 box">
-          <CardsWorkshop />
-          <CardsWorkshop />
-          <CardsWorkshop />
-          <CardsWorkshop />
-        </div>
+      <Container className="pt-4">
+        <Row className="pb-4 justify-content-center align-items-center">
+          <Button
+            color="secondary"
+            style={{
+              color: "#ffffff",
+              backgroundColor: "#FE7900",
+              borderRadius: "10px",
+            }}
+            type="button"
+          >
+            Film Submission
+          </Button>
+          <Button
+            color="secondary"
+            style={{
+              color: "#ffffff",
+              backgroundColor: "#FE7900",
+              borderRadius: "10px",
+            }}
+            type="button"
+            onClick={() => {
+              Router.push("/film-festival/workshop-programs");
+            }}
+          >
+            Workshop & Program
+          </Button>
+        </Row>
       </Container>
 
-      <Container>
-        <Col>
-          <Row className="align-items-center justify-content-between py-4">
-            <h2 className="p-0 m-0">Judges</h2>
-          </Row>
-        </Col>
-
-        <div className="row row-cols-2 row-cols-md-3 row-cols-lg-3 box">
-          <CardsJudges />
-          <CardsJudges />
-          <CardsJudges />
-        </div>
-      </Container>
-
-      <div style={{ backgroundColor: "#FE7900" }} className="p-0 my-4">
-        <Container className="pt-4">
+      <div style={{ backgroundColor: "#FE7900" }} className="p-0 mb-4">
+        <Container className="py-4">
           <Col>
             <h2 className="text-center" style={{ color: "#ffffff" }}>
-              Timeline :
+              Langkah Pendaftaran
             </h2>
-            <Row className="align-items-center pt-3">
+            <div className="align-items-center pt-3 row row-cols-2 row-cols-md-3 row-cols-lg-4 box">
               <Col>
-                <div className="mb-4" style={{ textAlign: "end" }}>
+                <div
+                  className="border_langkah mb-4 p-3"
+                  style={{ textAlign: "center", height: "380px" }}
+                >
                   <img
                     alt="..."
-                    src={require("assets/img/brand/Loket.svg")}
-                    width="25%"
+                    src={require("assets/img/icons/common/langkah1.svg")}
+                    width="50%"
                   />
+                  <div className="mt-2 langkah_number">1</div>
+                  <div
+                    className="my-2"
+                    style={{ color: "#ffffff", fontSize: "15px" }}
+                  >
+                    Klik submit untuk submit karya kamu
+                  </div>
                 </div>
               </Col>
               <Col>
-                <div className="mb-4" style={{ textAlign: "start" }}>
+                <div
+                  className="border_langkah mb-4 p-3"
+                  style={{ textAlign: "center", height: "380px" }}
+                >
                   <img
                     alt="..."
-                    src={require("assets/img/brand/Gotix.svg")}
-                    width="25%"
+                    src={require("assets/img/icons/common/langkah2.svg")}
+                    width="50%"
                   />
+                  <div className="mt-2 langkah_number">2</div>
+                  <div
+                    className="my-2"
+                    style={{ color: "#ffffff", fontSize: "15px" }}
+                  >
+                    Isi formulir Drive-In Senja FIlm Festival dengan data yang
+                    sebenar-benarnya, berikan alamat email dan nomor telepon
+                    yang aktif apabila kami menghubungimu di kemudian hari
+                  </div>
                 </div>
               </Col>
-            </Row>
+              <Col>
+                <div
+                  className="border_langkah mb-4 p-3"
+                  style={{ textAlign: "center", height: "380px" }}
+                >
+                  <img
+                    alt="..."
+                    src={require("assets/img/icons/common/langkah3.svg")}
+                    width="50%"
+                  />
+                  <div className="mt-2 langkah_number">3</div>
+                  <div
+                    className="my-2"
+                    style={{ color: "#ffffff", fontSize: "15px" }}
+                  >
+                    Berikan persetujuan kamu atas syarat dan ketentuan yang
+                    berlaku dengan mencentang (√) “Iya” di bagian bawah formulir
+                  </div>
+                </div>
+              </Col>
+              <Col>
+                <div
+                  className="border_langkah mb-4 p-3"
+                  style={{ textAlign: "center", height: "380px" }}
+                >
+                  <img
+                    alt="..."
+                    src={require("assets/img/icons/common/langkah4.svg")}
+                    width="50%"
+                  />
+                  <div className="mt-2 langkah_number">4</div>
+                  <div
+                    className="my-2"
+                    style={{ color: "#ffffff", fontSize: "15px" }}
+                  >
+                    Klik submit
+                  </div>
+                </div>
+              </Col>
+            </div>
+            <div className="text-center">
+              <Button
+                color="secondary"
+                style={{ color: "#FE7900" }}
+                type="button"
+              >
+                Submit
+              </Button>
+            </div>
           </Col>
         </Container>
       </div>
@@ -288,6 +309,6 @@ function WorkshopProgram() {
   );
 }
 
-WorkshopProgram.layout = HomeLayout;
+LandingSubmit.layout = HomeLayout;
 
-export default WorkshopProgram;
+export default LandingSubmit;
