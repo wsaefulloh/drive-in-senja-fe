@@ -36,8 +36,8 @@ h2 {
 }
 
 .col {
-  padding-left: 7.5px;
-  padding-right: 7.5px;
+  padding-left: 7.5px !important;
+  padding-right: 7.5px !important;
 }
 
 .row {
