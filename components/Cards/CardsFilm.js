@@ -1,35 +1,56 @@
 import React from "react";
+import Link from "next/link";
 
 // reactstrap components
 import { Button, Card, CardBody, CardTitle, Col } from "reactstrap";
 
+import PropTypes from "prop-types";
+
 import "../../assets/css/main/main.module.css";
 
-function CardFilms() {
+function CardFilms(props) {
+  let { img, id, title, genre, date, url } = props;
+
+  let newDate = date.split("-");
+
   return (
     <>
       <Col>
-        <Card className="background_film">
+        <Card
+          style={{
+            backgroundImage:
+              "url(" +
+              `https://drive.google.com/uc?export=view&id=${img}` +
+              ")",
+            height: "350px",
+            width: "100%",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
+        >
           <CardBody className="gradient__card__events d-flex align-items-end">
             <div className="w-100">
               <CardTitle className="mb-3" tag="h3" style={{ color: "#ffffff" }}>
-                The Nun
+                {title}
               </CardTitle>
-              <div>Horror/Thriller</div>
-              <div className="mb-3">Jumat 22 Mei 2022</div>
+              <div>{genre}</div>
+              <div className="mb-3">{newDate[1]}</div>
 
               <div className="d-flex justify-content-center align-items-center">
-                <Button
-                  style={{
-                    color: "#FE7900",
-                    width: "100%",
-                    backgroundColor: "#ffffff",
-                  }}
-                  type="button"
-                  className="w-100 p-1"
-                >
-                  Details
-                </Button>
+                <Link href={`/film-details/${id}`}>
+                  <Button
+                    style={{
+                      color: "#FE7900",
+                      width: "100%",
+                      backgroundColor: "#ffffff",
+                    }}
+                    type="button"
+                    className="w-100 p-1"
+                  >
+                    Details
+                  </Button>
+                </Link>
+
                 <Button
                   style={{
                     color: "#ffffff",
@@ -49,5 +70,14 @@ function CardFilms() {
     </>
   );
 }
+
+CardFilms.propTypes = {
+  img: PropTypes.any,
+  title: PropTypes.string,
+  id: PropTypes.string,
+  genre: PropTypes.string,
+  date: PropTypes.string,
+  url: PropTypes.string,
+};
 
 export default CardFilms;

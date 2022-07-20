@@ -3,17 +3,32 @@ import React from "react";
 // reactstrap components
 import { Button, Card, CardBody, CardTitle, Col } from "reactstrap";
 
+import PropTypes from "prop-types";
+
 import "../../assets/css/main/main.module.css";
 
-function CardEvents() {
+function CardEvents(props) {
+  let { img, id, title } = props;
+
   return (
     <>
       <Col>
-        <Card className="background__card__events">
+        <Card
+          style={{
+            backgroundImage:
+              "url(" +
+              `https://drive.google.com/uc?export=view&id=${img}` +
+              ")",
+            height: "250px",
+            width: "100%",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
+        >
           <CardBody className="gradient__card__events d-flex align-items-end">
             <div className="w-100">
               <CardTitle className="mb-2" tag="h3" style={{ color: "#ffffff" }}>
-                Card title
+                {title}
               </CardTitle>
               <Button
                 style={{
@@ -34,5 +49,11 @@ function CardEvents() {
     </>
   );
 }
+
+CardEvents.propTypes = {
+  img: PropTypes.any,
+  title: PropTypes.string,
+  id: PropTypes.string,
+};
 
 export default CardEvents;

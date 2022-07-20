@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // reactstrap components
 import {
@@ -14,11 +14,26 @@ import {
 // layout for this page
 import HomeLayout from "layouts/Homepage.js";
 
+import { fetchWrapper } from "../helpers/fetch-wrapper";
+
 import CardFilms from "components/Cards/CardsFilm.js";
 
 import "../assets/css/main/main.module.css";
 
 function ListFilm() {
+  const [film, setFilm] = useState([]);
+
+  const getFilm = async () => {
+    const data = await fetchWrapper.get(`api/film-list`);
+    if (data) {
+      setFilm(data.data);
+    }
+  };
+
+  useEffect(() => {
+    getFilm();
+  }, []);
+
   return (
     <>
       <Container className="pt-4">
@@ -159,12 +174,18 @@ function ListFilm() {
 
       <Container className="pt-4">
         <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 box">
-          <CardFilms />
-          <CardFilms />
-          <CardFilms />
-          <CardFilms />
-          <CardFilms />
-          <CardFilms />
+          {film.map((val) => {
+            return (
+              <CardFilms
+                img={val.poster_image}
+                title={val.title}
+                date={val.date_playing}
+                genre={val.genre}
+                id={val.id_film}
+                url={val.url_ticket}
+              />
+            );
+          })}
         </div>
       </Container>
     </>

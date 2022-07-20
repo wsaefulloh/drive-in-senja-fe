@@ -161,6 +161,17 @@ h2 {
   border-radius: 5px;
 }
 
+.gradient__card__detail_film {
+  background: linear-gradient(
+    180deg,
+    rgba(214, 231, 255, 0) -80%,
+    #000000 116.25%
+  );
+  height: 100%;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
 .gradient__card__partner {
   background: linear-gradient(
     180deg,

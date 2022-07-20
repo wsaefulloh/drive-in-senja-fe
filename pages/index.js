@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // reactstrap components
 import { Button, Card, Container, Row, Col } from "reactstrap";
@@ -9,17 +9,22 @@ import CardEvent from "components/Cards/CardsEvent.js";
 
 import CardFilms from "components/Cards/CardsFilm.js";
 
+import { fetchWrapper } from "../helpers/fetch-wrapper";
+
 import Slider from "react-slick";
 
 import "../assets/css/main/main.module.css";
 
 function Home() {
+  const [eventsPromotions, setEventsPromotions] = useState([]);
+  const [film, setFilm] = useState([]);
+
   var settings = {
     arrows: true,
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: film.length < 4 ? film.length : 4,
     slidesToScroll: 1,
     swipeToSlide: true,
     responsive: [
@@ -27,7 +32,7 @@ function Home() {
         breakpoint: 1150,
         settings: {
           arrows: true,
-          slidesToShow: 2,
+          slidesToShow: film.length < 2 ? film.length : 2,
           slidesToScroll: 1,
           infinite: true,
           dots: true,
@@ -106,6 +111,30 @@ function Home() {
     ],
   };
 
+  const getEventsPromotions = async () => {
+    const data = await fetchWrapper.get(`api/events-promotions`);
+    if (data) {
+      setEventsPromotions(data.data);
+    }
+  };
+
+  const getFilm = async () => {
+    const data = await fetchWrapper.get(`api/film-list`);
+    if (data) {
+      setFilm(data.data);
+    }
+  };
+
+  useEffect(() => {
+    getEventsPromotions();
+    getFilm();
+  }, []);
+
+  useEffect(() => {
+    console.log(eventsPromotions);
+    console.log(film);
+  }, [film]);
+
   return (
     <>
       <Container className="p-0 m-0" style={{ maxWidth: "100%" }}>
@@ -131,7 +160,7 @@ function Home() {
                 style={{ color: "#FE7900" }}
                 type="button"
               >
-                Buy Ticket
+                BELI TIKET
               </Button>
             </Container>
           </Col>
@@ -153,13 +182,11 @@ function Home() {
           </Row>
         </Col>
 
-        <Row>
-          <CardEvent />
-          <CardEvent />
-          <CardEvent />
-          <CardEvent />
-          <CardEvent />
-        </Row>
+        <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 box">
+          {eventsPromotions.map((val) => {
+            return <CardEvent img={val.poster_image} title={val.title} />;
+          })}
+        </div>
       </Container>
 
       <Container className="pt-4">
@@ -255,12 +282,18 @@ function Home() {
           <Container>
             <div className="carousel-box">
               <Slider {...settings} className="slider-playnow">
-                <CardFilms />
-                <CardFilms />
-                <CardFilms />
-                <CardFilms />
-                <CardFilms />
-                <CardFilms />
+                {film.map((val) => {
+                  return (
+                    <CardFilms
+                      img={val.poster_image}
+                      title={val.title}
+                      date={val.date_playing}
+                      genre={val.genre}
+                      id={val.id_film}
+                      url={val.url_ticket}
+                    />
+                  );
+                })}
               </Slider>
             </div>
           </Container>
@@ -372,11 +405,15 @@ function Home() {
               FOOD & DRINK
             </div>
             <Button
-              color="secondary"
-              style={{ color: "#FE7900", marginTop: "20px" }}
+              style={{
+                color: "#000000",
+                marginTop: "20px",
+                backgroundColor: "#FE7900",
+                border: "0",
+              }}
               type="button"
             >
-              Order Now
+              Pesan Sekarang
             </Button>
           </div>
         </Row>
